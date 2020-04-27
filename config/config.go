@@ -1,0 +1,45 @@
+package config
+
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+)
+
+//Token and bot command by default
+var (
+	Token  string
+	BotCom string
+	config *configstruct
+)
+
+//Defining the structure for the config model
+type configstruct struct {
+	Token  string `json:"Token"`
+	BotCom string `json:"BotCom"`
+}
+
+//ReadConfig reads directly from the config file
+func ReadConfig() error {
+	file, err := ioutil.ReadFile("./config.json")
+
+	if err != nil {
+		fmt.Println(err.Error())
+		return err
+	}
+
+	fmt.Println(string(file))
+
+	err = json.Unmarshal(file, &config)
+
+	if err != nil {
+		fmt.Println(err.Error())
+		return err
+	}
+
+	Token = config.Token
+	BotCom = config.BotCom
+	//Returning 0 errors
+	return nil
+
+}

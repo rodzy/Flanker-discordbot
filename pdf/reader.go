@@ -2,25 +2,24 @@ package reader
 
 import (
 	"bufio"
-	"fmt"
 	"log"
 	"os"
 )
 
 //Saving pieces of the txt(Not the most optimal way :P)
 var (
-	MainTitle string
+	MainTitle       string
 	MainDescription []string
-	InstallTitle string
-	InstallDesc []string
-	CreateTitle string
-	CreateDesc []string
-	GitInit string
-	GitClone string
-) 
+	InstallTitle    string
+	InstallDesc     []string
+	CreateTitle     string
+	CreateDesc      []string
+	GitInit         string
+	GitClone        string
+)
 
 //ReadPdf func from
-func ReadPdf() error{
+func ReadPdf() error {
 	f, err := os.Open("./github-git-cheat-sheet.txt")
 	if err != nil {
 		log.Fatalf("Error opening github-git-cheat-sheet: %s", err)
@@ -34,9 +33,5 @@ func ReadPdf() error{
 	}
 	f.Close()
 
-	MainTitle=lines[0]
-	MainDescription=lines[1:6]
-	fmt.Println(MainTitle)
-	fmt.Println(MainDescription)
 	return nil
 }

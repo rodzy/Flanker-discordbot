@@ -30,7 +30,9 @@ func FlankStart() {
 	//Setting the user id to the bot
 	FlankerID = us.ID
 
+	flankSession.AddHandler(StateHandler)
 	flankSession.AddHandler(MessageHandler)
+	
 
 	err = flankSession.Open()
 	if err != nil {
@@ -95,4 +97,9 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 	fmt.Println(reader.MainTitle)
 
+}
+
+//StateHandler for the state of the bot
+func StateHandler(s*discordgo.Session, event *discordgo.Ready)  {
+	s.UpdateListeningStatus("$help")
 }

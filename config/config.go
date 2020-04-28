@@ -15,8 +15,8 @@ var (
 
 //Defining the structure for the config model
 type configstruct struct {
-	Token  string `json:"Token"`
-	BotCom string `json:"BotCom"`
+	Token  string ` json:"Token"`
+	BotCom string ` json:"BotCom"`
 }
 
 //ReadConfig reads directly from the config file

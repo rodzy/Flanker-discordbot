@@ -2,8 +2,10 @@ package flankbot
 
 import (
 	"fmt"
+
 	"github.com/bwmarrin/discordgo"
 	"github.com/rodzy/flanker-discordbot/config"
+	"github.com/rodzy/flanker-discordbot/pdf"
 )
 //FlankerID is the id for FlankBot
 var FlankerID string
@@ -25,7 +27,7 @@ func FlankStart()  {
 	//Setting the user id to the bot
 	FlankerID=us.ID
 
-	// flankSession.AddHandler()
+	flankSession.AddHandler(MessageHandler)
 
 	err=flankSession.Open()
 	if err != nil {
@@ -33,4 +35,15 @@ func FlankStart()  {
 		return
 	}
 	fmt.Println("Flanker is running!!!")
+}
+
+
+//MessageHandler to handle all the commands and text from the pdf
+func MessageHandler(s *discordgo.Session,m *discordgo.MessageCreate)  {
+	if m.Author.ID==FlankerID {
+		return
+	}
+
+	fmt.Println(reader.MainTitle)
+
 }

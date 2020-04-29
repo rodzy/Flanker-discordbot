@@ -9,17 +9,15 @@ import (
 )
 
 func main() {
-	err:=reader.ReadPdf()
+	err := reader.ReadPdf()
 	if err != nil {
 		fmt.Println("Can't read sorry")
 	}
 
-	er:=config.ReadConfig()
+	er := config.ReadConfig()
 	if er != nil {
 		fmt.Print("Can't connect sorry")
 	}
 	flankbot.FlankStart()
-	
-	<-make(chan struct{})
-	return
+
 }

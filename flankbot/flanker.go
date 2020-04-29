@@ -2,10 +2,7 @@ package flankbot
 
 import (
 	"fmt"
-	"os"
-	"os/signal"
 	"strings"
-	"syscall"
 	"time"
 
 	"github.com/bwmarrin/discordgo"
@@ -42,14 +39,8 @@ func FlankStart() {
 	}
 	fmt.Println("Flanker is running!!!")
 
-	//Setting a signal to stop the bot (CTRL+C)
-	sc := make(chan os.Signal, 1)
-	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt, os.Kill)
-	<-sc
-
-	// Cleanly close down the Discord session.
-	flankSession.Close()
-
+	<-make(chan struct{})
+	return
 }
 
 //MessageHandler to handle all the commands and text from the pdf

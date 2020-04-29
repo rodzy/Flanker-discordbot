@@ -34,7 +34,6 @@ func FlankStart() {
 
 	flankSession.AddHandler(StateHandler)
 	flankSession.AddHandler(MessageHandler)
-	
 
 	err = flankSession.Open()
 	if err != nil {
@@ -73,8 +72,8 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 			Description: "Git is the open source distributed version control system that facilitates GitHub activities on your laptop or desktop.\n To start just write: ``$<Command>``",
 			Fields: []*discordgo.MessageEmbedField{
 				{
-					Name: "Install",
-					Value: "```html\ncommand -> <$Install>```",
+					Name:   "Install",
+					Value:  "```html\ncommand -> <$Install>```",
 					Inline: false,
 				},
 				{
@@ -83,8 +82,8 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 					Inline: false,
 				},
 				{
-					Name: "Configure tooling",
-					Value: "```html\ncommand -> <$Config>```",
+					Name:   "Configure tooling",
+					Value:  "```html\ncommand -> <$Config>```",
 					Inline: false,
 				},
 				{
@@ -93,8 +92,8 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 					Inline: false,
 				},
 				{
-					Name: "Branches",
-					Value: "```html\ncommand -> <$Branches>```",
+					Name:   "Branches",
+					Value:  "```html\ncommand -> <$Branches>```",
 					Inline: false,
 				},
 				{
@@ -113,19 +112,19 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 					Inline: false,
 				},
 				{
-					Name: "Git Information",
-					Value: "```html\ncommand -> <$Info>```",
+					Name:   "Git Information",
+					Value:  "```html\ncommand -> <$Info>```",
 					Inline: false,
 				},
 				{
-					Name: "Tutorial",
-					Value: "```html\ncommand -> <$Tuto>```",
+					Name:   "Tutorial",
+					Value:  "```html\ncommand -> <$Tuto>```",
 					Inline: false,
 				},
 			},
 			Thumbnail: &discordgo.MessageEmbedThumbnail{
-			 	URL: "https://gitforwindows.org/img/gwindows_logo.png",
-			 },
+				URL: "https://gitforwindows.org/img/gwindows_logo.png",
+			},
 			Footer: &discordgo.MessageEmbedFooter{
 				Text: "Want to learn more about using GitHub and Git? Email the Training Team or visit our web site for learning event schedules and private class availability.\nservices@github.com\nhttps://services.github.com/",
 			},
@@ -136,8 +135,8 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	/*-------INSTALL--------*/
-	if m.Content=="$Install" {
-		embed:= &discordgo.MessageEmbed{
+	if m.Content == "$Install" {
+		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
@@ -152,33 +151,33 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 					Inline: false,
 				},
 				{
-					Name: "GitHub for Mac",
-					Value: "https://mac.github.com/",
+					Name:   "GitHub for Mac",
+					Value:  "https://mac.github.com/",
 					Inline: false,
 				},
 				{
-					Name: "Git for All Platforms",
-					Value: "https://git-scm.com/",
+					Name:   "Git for All Platforms",
+					Value:  "https://git-scm.com/",
 					Inline: false,
 				},
 				{
-					Name: "*",
-					Value: "Git distributions for Linux and POSIX systems are available on the official Git SCM web site.",
+					Name:   "*",
+					Value:  "Git distributions for Linux and POSIX systems are available on the official Git SCM web site.",
 					Inline: false,
 				},
 			},
 			Thumbnail: &discordgo.MessageEmbedThumbnail{
 				URL: "https://gitforwindows.org/img/gwindows_logo.png",
 			},
-			Timestamp: time.Now().Format(time.RFC3339), 
+			Timestamp: time.Now().Format(time.RFC3339),
 			Title:     "Git Cheat Sheet - Install",
 		}
-		_,_= s.ChannelMessageSendEmbed(m.ChannelID,embed)
+		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
 	/*-------BRANCHES--------*/
-	if m.Content=="$Branches" {
-		embed:= &discordgo.MessageEmbed{
+	if m.Content == "$Branches" {
+		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
@@ -188,22 +187,22 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 			Description: "Branches are an important part of working with Git. Any commits you make will be made on the branch you're currently “checked out” to. Use ``git status`` to see which branch that is.",
 			Fields: []*discordgo.MessageEmbedField{
 				{
-					Name: "Creates a new branch",
+					Name:   "Creates a new branch",
 					Value:  "```shell\n$ git branch [branch-name]```",
 					Inline: false,
 				},
 				{
-					Name: "Switches to the specified branch and updates the working directory",
+					Name:   "Switches to the specified branch and updates the working directory",
 					Value:  "```shell\n$ git checkout [branch-name]```",
 					Inline: false,
 				},
 				{
-					Name: "Combines the specified branch’s history into the current branch. This is usually done in pull requests, but is an important Git operation.",
+					Name:   "Combines the specified branch’s history into the current branch. This is usually done in pull requests, but is an important Git operation.",
 					Value:  "```shell\n$ git merge [branch]```",
 					Inline: false,
 				},
 				{
-					Name: "Deletes the specified branch",
+					Name:   "Deletes the specified branch",
 					Value:  "```shell\n$ git branch -d [branch-name]```",
 					Inline: false,
 				},
@@ -211,15 +210,15 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 			Thumbnail: &discordgo.MessageEmbedThumbnail{
 				URL: "https://gitforwindows.org/img/gwindows_logo.png",
 			},
-			Timestamp: time.Now().Format(time.RFC3339), 
+			Timestamp: time.Now().Format(time.RFC3339),
 			Title:     "Git Cheat Sheet - Branches",
 		}
-		_,_= s.ChannelMessageSendEmbed(m.ChannelID,embed)
+		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
 	/*------CREATE--------*/
-	if m.Content=="$Create" {
-		embed:= &discordgo.MessageEmbed{
+	if m.Content == "$Create" {
+		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
@@ -234,8 +233,8 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 					Inline: false,
 				},
 				{
-					Name: "Clone (download) a repository that already exists on GitHub, including all of the files, branches, and commits",
-					Value: "```shell\n$ git clone [url]```",
+					Name:   "Clone (download) a repository that already exists on GitHub, including all of the files, branches, and commits",
+					Value:  "```shell\n$ git clone [url]```",
 					Inline: false,
 				},
 			},
@@ -245,12 +244,12 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 			Timestamp: time.Now().Format(time.RFC3339),
 			Title:     "Git Cheat Sheet - Create repositories",
 		}
-		_,_= s.ChannelMessageSendEmbed(m.ChannelID,embed)
+		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
 	/*------Config-------*/
-	if m.Content=="$Config" {
-		embed:= &discordgo.MessageEmbed{
+	if m.Content == "$Config" {
+		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
@@ -278,15 +277,15 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 			Thumbnail: &discordgo.MessageEmbedThumbnail{
 				URL: "https://gitforwindows.org/img/gwindows_logo.png",
 			},
-			Timestamp: time.Now().Format(time.RFC3339), 
+			Timestamp: time.Now().Format(time.RFC3339),
 			Title:     "Git Cheat Sheet - Configure tooling",
 		}
-		_,_= s.ChannelMessageSendEmbed(m.ChannelID,embed)
+		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
 	/*------Git ignore-------*/
-	if m.Content=="$Ignore" {
-		embed:= &discordgo.MessageEmbed{
+	if m.Content == "$Ignore" {
+		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
@@ -297,15 +296,15 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 			Thumbnail: &discordgo.MessageEmbedThumbnail{
 				URL: "https://gitforwindows.org/img/gwindows_logo.png",
 			},
-			Timestamp: time.Now().Format(time.RFC3339), 
+			Timestamp: time.Now().Format(time.RFC3339),
 			Title:     "Git Cheat Sheet - The .gitgnore file",
 		}
-		_,_= s.ChannelMessageSendEmbed(m.ChannelID,embed)
+		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
 	/*-------CHANGES--------*/
-	if m.Content=="$Changes" {
-		embed:= &discordgo.MessageEmbed{
+	if m.Content == "$Changes" {
+		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
@@ -348,15 +347,15 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 			Thumbnail: &discordgo.MessageEmbedThumbnail{
 				URL: "https://gitforwindows.org/img/gwindows_logo.png",
 			},
-			Timestamp: time.Now().Format(time.RFC3339), 
+			Timestamp: time.Now().Format(time.RFC3339),
 			Title:     "Git Cheat Sheet - Make changes",
 		}
-		_,_= s.ChannelMessageSendEmbed(m.ChannelID,embed)
+		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
 	/*------Redo-------*/
-	if m.Content=="$Redo" {
-		embed:= &discordgo.MessageEmbed{
+	if m.Content == "$Redo" {
+		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
@@ -374,7 +373,7 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 					Name:   "Discards all history and changes back to the specified commit",
 					Value:  "```shell\n$ git reset --hard [commit]```",
 					Inline: false,
-				},				
+				},
 			},
 			Thumbnail: &discordgo.MessageEmbedThumbnail{
 				URL: "https://gitforwindows.org/img/gwindows_logo.png",
@@ -385,12 +384,12 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 				Text: "CAUTION! Changing history can have nasty side effects. If you need to change commits that exist on GitHub (the remote), proceed with caution. If you need help, reach out at github.community or contact support.",
 			},
 		}
-		_,_= s.ChannelMessageSendEmbed(m.ChannelID,embed)
+		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
 	/*------Info-------*/
-	if m.Content=="$Info" {
-		embed:= &discordgo.MessageEmbed{
+	if m.Content == "$Info" {
+		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
@@ -414,12 +413,12 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 			Timestamp: time.Now().Format(time.RFC3339),
 			Title:     "Git Cheat Sheet - Information",
 		}
-		_,_= s.ChannelMessageSendEmbed(m.ChannelID,embed)
+		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
-	
+
 	/*------Sync-------*/
-	if m.Content=="$Sync" {
-		embed:= &discordgo.MessageEmbed{
+	if m.Content == "$Sync" {
+		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
@@ -452,47 +451,46 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 			Thumbnail: &discordgo.MessageEmbedThumbnail{
 				URL: "https://gitforwindows.org/img/gwindows_logo.png",
 			},
-			Timestamp: time.Now().Format(time.RFC3339), 
+			Timestamp: time.Now().Format(time.RFC3339),
 			Title:     "Git Cheat Sheet - Synchronize changes",
 		}
-		_,_= s.ChannelMessageSendEmbed(m.ChannelID,embed)
+		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
-		/*------Tutorial-------*/
-		if m.Content=="$Tuto" {
-			embed:= &discordgo.MessageEmbed{
-				Author: &discordgo.MessageEmbedAuthor{
-					Name:    "Flankerbot",
-					URL:     "https://github.com/rodzy",
-					IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/768085d0b4991979ffda4218a977364e.webp?size=128",
+	/*------Tutorial-------*/
+	if m.Content == "$Tuto" {
+		embed := &discordgo.MessageEmbed{
+			Author: &discordgo.MessageEmbedAuthor{
+				Name:    "Flankerbot",
+				URL:     "https://github.com/rodzy",
+				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/768085d0b4991979ffda4218a977364e.webp?size=128",
+			},
+			Color:       0x66ccff,
+			Description: "Just in case - Quick setup\n **REMEMBER: YOU NEED TO CHANGE EVERYTHING THAT'S ON SQUARE BRACKETS**",
+			Fields: []*discordgo.MessageEmbedField{
+				{
+					Name:   "Create a new repository",
+					Value:  "```shell\n$ echo # [repo-name] >> README.md\n$ git init git add README.md\n$ git commit -m [first commit]\n$ git remote add origin https://github.com/[user]/[repo-name].git\n$ git push -u origin master```",
+					Inline: false,
 				},
-				Color:       0x66ccff,
-				Description: "Just in case - Quick setup\n **REMEMBER: YOU NEED TO CHANGE EVERYTHING THAT'S ON SQUARE BRACKETS**",
-				Fields: []*discordgo.MessageEmbedField{
-					{
-						Name:   "Create a new repository",
-						Value:  "```shell\n$ echo # [repo-name] >> README.md\n$ git init git add README.md\n$ git commit -m [first commit]\n$ git remote add origin https://github.com/[user]/[repo-name].git\n$ git push -u origin master```",
-						Inline: false,
-					},
-					{
-						Name:   "Pushing an existing repository from the command line",
-						Value:  "```shell\n$ git remote add origin https://github.com/[user]/[repo-name].git\n$ git push -u origin master```",
-						Inline: false,
-					},
+				{
+					Name:   "Pushing an existing repository from the command line",
+					Value:  "```shell\n$ git remote add origin https://github.com/[user]/[repo-name].git\n$ git push -u origin master```",
+					Inline: false,
 				},
-				Thumbnail: &discordgo.MessageEmbedThumbnail{
-					URL: "https://gitforwindows.org/img/gwindows_logo.png",
-				},
-				Timestamp: time.Now().Format(time.RFC3339), 
-				Title:     "GitHub Repo - Quick setup",
-			}
-			_,_= s.ChannelMessageSendEmbed(m.ChannelID,embed)
+			},
+			Thumbnail: &discordgo.MessageEmbedThumbnail{
+				URL: "https://gitforwindows.org/img/gwindows_logo.png",
+			},
+			Timestamp: time.Now().Format(time.RFC3339),
+			Title:     "GitHub Repo - Quick setup",
 		}
-	
+		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
+	}
 
 }
 
 //StateHandler for the state of the bot
-func StateHandler(s*discordgo.Session, event *discordgo.Ready)  {
+func StateHandler(s *discordgo.Session, event *discordgo.Ready) {
 	s.UpdateListeningStatus("$help")
 }

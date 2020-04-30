@@ -1,1 +1,2 @@
-worker: main.go
+observe: *.go
+worker: flanker-discordbot

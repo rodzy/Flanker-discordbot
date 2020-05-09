@@ -55,8 +55,11 @@ $Tuto
 ## Project status
 
 I'm currently working on some improvements on the structure of the project, trying to divide each API component into models usign Go structures. <br/>
-Also I'm thinking on setting up more especific information from git and all of it's tooling. <br/>
+Also I'm thinking on setting up more detailed information from git and not just from the regular cheat sheet.<br/>
 *P.S: If you got a great idea on how to improve the project, feel free to make a ``Fork`` or maybe get to me I might be working on it who knows*
+
+![GitHub stars](https://img.shields.io/github/stars/rodzy/flanker-discordbot?style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/Irodx2?style=social)
 
 ## About the bot status
 There is nothing to worry about the bot will always be online, updates will occur mostly on sunday if that day he goes offline for some minutes you might aswell check this repo for some updated code 😀<br/> 

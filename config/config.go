@@ -21,7 +21,7 @@ type configstruct struct {
 
 //ReadConfig reads directly from the config file
 func ReadConfig() error {
-	file, err := ioutil.ReadFile("./config.json")
+	file, err := ioutil.ReadFile("./token.json")
 
 	if err != nil {
 		fmt.Println(err.Error())

@@ -4,6 +4,7 @@
 *.dll
 *.so
 *.dylib
+*.json
 
 # Test binary, built with `go test -c`
 *.test
@@ -15,5 +16,5 @@
 # vendor/
 
 
-# Dockerfile
-Dockerfile
+#json
+.json

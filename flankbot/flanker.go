@@ -5,6 +5,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Clinet/discordgo-embed"
 	"github.com/bwmarrin/discordgo"
 	"github.com/rodzy/flanker-discordbot/config"
 )
@@ -50,14 +51,13 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 			return
 		}
 	}
-	/*-------HELP--------*/
+	//Help embed
 	if m.Content == "$help" {
-		//Message introduction
 		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
-				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/768085d0b4991979ffda4218a977364e.webp?size=128",
+				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/16ea3509f9a41b475966b85565a930fa.webp?size=128",
 			},
 			Color:       0x66ccff,
 			Description: "Git is the open source distributed version control system that facilitates GitHub activities on your laptop or desktop.\n To start just write: ``$<Command>``",
@@ -125,13 +125,13 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
-	/*-------INSTALL--------*/
+	//Install embed
 	if m.Content == "$Install" {
 		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
-				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/768085d0b4991979ffda4218a977364e.webp?size=128",
+				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/16ea3509f9a41b475966b85565a930fa.webp?size=128",
 			},
 			Color:       0x66ccff,
 			Description: "Get git on your computer",
@@ -166,13 +166,13 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
-	/*-------BRANCHES--------*/
+	//Branches embed
 	if m.Content == "$Branches" {
 		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
-				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/768085d0b4991979ffda4218a977364e.webp?size=128",
+				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/16ea3509f9a41b475966b85565a930fa.webp?size=128",
 			},
 			Color:       0x66ccff,
 			Description: "Branches are an important part of working with Git. Any commits you make will be made on the branch you're currently “checked out” to. Use ``git status`` to see which branch that is.",
@@ -207,13 +207,13 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
-	/*------CREATE--------*/
+	//Create embed
 	if m.Content == "$Create" {
 		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
-				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/768085d0b4991979ffda4218a977364e.webp?size=128",
+				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/16ea3509f9a41b475966b85565a930fa.webp?size=128",
 			},
 			Color:       0x66ccff,
 			Description: "When starting out with a new repository, you only need to do it once; either locally, then push to GitHub, or by cloning an existing repository.",
@@ -238,13 +238,13 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
-	/*------Config-------*/
+	//Config embed
 	if m.Content == "$Config" {
 		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
-				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/768085d0b4991979ffda4218a977364e.webp?size=128",
+				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/16ea3509f9a41b475966b85565a930fa.webp?size=128",
 			},
 			Color:       0x66ccff,
 			Description: "Configure user information for all local repositories",
@@ -274,13 +274,13 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
-	/*------Git ignore-------*/
+	//Git ignore embed
 	if m.Content == "$Ignore" {
 		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
-				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/768085d0b4991979ffda4218a977364e.webp?size=128",
+				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/16ea3509f9a41b475966b85565a930fa.webp?size=128",
 			},
 			Color:       0x66ccff,
 			Description: "Sometimes it may be a good idea to exclude files from being tracked with Git. This is typically done in a special file named ``.gitignore`` . You can find helpful templates for ``.gitignore`` files at github.com/github/gitignore.",
@@ -293,13 +293,13 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
-	/*-------CHANGES--------*/
+	//Changes embed
 	if m.Content == "$Changes" {
 		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
-				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/768085d0b4991979ffda4218a977364e.webp?size=128",
+				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/16ea3509f9a41b475966b85565a930fa.webp?size=128",
 			},
 			Color:       0x66ccff,
 			Description: "Browse and inspect the evolution of project files",
@@ -344,13 +344,13 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
-	/*------Redo-------*/
+	//Redo embed
 	if m.Content == "$Redo" {
 		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
-				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/768085d0b4991979ffda4218a977364e.webp?size=128",
+				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/16ea3509f9a41b475966b85565a930fa.webp?size=128",
 			},
 			Color:       0x66ccff,
 			Description: "Erase mistakes and craft replacement history",
@@ -378,13 +378,13 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
-	/*------Info-------*/
+	//Info embed
 	if m.Content == "$Info" {
 		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
-				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/768085d0b4991979ffda4218a977364e.webp?size=128",
+				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/16ea3509f9a41b475966b85565a930fa.webp?size=128",
 			},
 			Color:       0x66ccff,
 			Description: "Some intresting facts",
@@ -407,13 +407,13 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
-	/*------Sync-------*/
+	//Sync embed
 	if m.Content == "$Sync" {
 		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
-				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/768085d0b4991979ffda4218a977364e.webp?size=128",
+				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/16ea3509f9a41b475966b85565a930fa.webp?size=128",
 			},
 			Color:       0x66ccff,
 			Description: "Synchronize your local repository with the remote repository on GitHub.com",
@@ -448,13 +448,13 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		_, _ = s.ChannelMessageSendEmbed(m.ChannelID, embed)
 	}
 
-	/*------Tutorial-------*/
+	//Tutorial embed
 	if m.Content == "$Tuto" {
 		embed := &discordgo.MessageEmbed{
 			Author: &discordgo.MessageEmbedAuthor{
 				Name:    "Flankerbot",
 				URL:     "https://github.com/rodzy",
-				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/768085d0b4991979ffda4218a977364e.webp?size=128",
+				IconURL: "https://cdn.discordapp.com/avatars/703454326722396161/16ea3509f9a41b475966b85565a930fa.webp?size=128",
 			},
 			Color:       0x66ccff,
 			Description: "Just in case - Quick setup\n **REMEMBER: YOU NEED TO CHANGE EVERYTHING THAT'S ON SQUARE BRACKETS**",

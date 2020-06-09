@@ -14,39 +14,39 @@ I used [bwmarrin/discordgo](http://bwmarrin.github.io/discordgo/) library to con
 ## Commands
 
 Full list of the commands at the moment:
--Installing git on your PC/MacOS/All platforms
+- Installing git on your PC/MacOS/All platforms
 ```python
 $Install
 ```
--How to create repos
+- How to create repos
 ```python
 $Create
 ```
--Configuring the tooling
+- Configuring the tooling
 ```python
 $Config
 ```
--The .gitingnore file
+- The .gitingnore file
 ```python
 $Ignore
 ```
--How manage branches
+- How manage branches
 ```python
 $Branches
 ```
--How to syncronize changes
+- How to syncronize changes
 ```python
 $Sync
 ```
--How to redo commits
+- How to redo commits
 ```python
 $Redo
 ```
--Some basic terminology to work around git
+- Some basic terminology to work around git
 ```python
 $Info
 ```
--The starter repo tutorial
+- The starter repo tutorial
 ```python
 $Tuto
 ```
